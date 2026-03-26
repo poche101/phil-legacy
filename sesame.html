@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesame Seeds | Phil Legacy Global Resources</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        :root {
+            --phil-gold: #c5a046;
+            --phil-dark: #1a1a1a;
+            --phil-stone: #1c1917; 
+            /* Blue Palette */
+            --phil-blue: #1e40af; 
+            --phil-blue-dark: #1e3a8a;
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: #fdfdfd; color: #333; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        /* Sidebar Styling */
+        .sidebar-menu {
+            background-color: var(--phil-blue-dark);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .sidebar-link {
+            display: block;
+            padding: 12px 20px;
+            color: #d1d5db; 
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background-color: var(--phil-gold);
+            color: white;
+            padding-left: 28px;
+        }
+
+        /* Call Box */
+        .call-action-box {
+            background: linear-gradient(135deg, var(--phil-blue), var(--phil-blue-dark));
+            border-radius: 12px;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Spec Table */
+        .spec-card {
+            border: none;
+            border-left: 4px solid var(--phil-blue);
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            transition: transform 0.3s ease;
+        }
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            color: white;
+            transform: scale(1.02);
+        }
+
+        /* Product Card Styles */
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #eee !important;
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .product-card img {
+            height: 180px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .product-card h6 {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .btn-card {
+            border: 1px solid var(--phil-gold) !important;
+            color: var(--phil-gold) !important;
+            background: transparent;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            padding: 8px 10px;
+            border-radius: 4px;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-card:hover {
+            background: var(--phil-gold) !important;
+            color: #fff !important;
+        }
+
+        .continuousSwiper .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+
+        @media (min-width: 992px) {
+            .sticky-sidebar {
+                position: sticky;
+                top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="py-12 border-b border-white/10" style="background: linear-gradient(to right, #1e3a8a, #2563eb);">
+    <div class="container">
+        <nav class="flex items-center space-x-2 mb-4 text-[10px] font-bold tracking-[0.2em] uppercase text-blue-200">
+            <a href="index.html" class="hover:text-white">Home</a>
+            <span>/</span>
+            <a href="products.html" class="hover:text-white">Products</a>
+            <span>/</span>
+            <span class="text-white">Sesame Seeds</span>
+        </nav>
+        <h1 class="text-4xl md:text-5xl font-serif italic text-white">Sesame <span class="not-italic text-amber-400">Seeds</span></h1>
+    </div>
+</section>
+
+<section class="py-16">
+    <div class="container">
+        <div class="row g-5">
+            
+            <div class="col-lg-8 order-1">
+                <div class="img-zoom-container rounded-2xl overflow-hidden mb-5 shadow-2xl h-[300px] md:h-[450px]">
+                    <img src="assets/img/sesame.jpg" class="w-full h-full object-cover" alt="Sesame Seeds">
+                </div>
+
+                <div class="mb-5">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-4 flex items-center">
+                        <span class="w-10 h-[2px] bg-blue-600 d-inline-block me-3"></span>
+                        Overview
+                    </h3>
+                    <p class="text-stone-600 leading-relaxed text-lg">
+                        Customers in both national and international markets prefer our sesame seeds for their superior grade and high-quality packaging. We thoroughly check the seeds against various standards and parameters before dispatch to ensure a quality-assured product.
+                    </p>
+                    <p class="text-stone-600 leading-relaxed mt-3">
+                        Thanks to our efficient logistics system, we ensure timely delivery to customers worldwide. This dedication has made us a renowned exporter and supplier of sesame seeds from Nigeria.
+                    </p>
+                </div>
+
+                <div class="card spec-card p-4 mb-5">
+                    <h5 class="font-bold text-stone-900 mb-4 uppercase tracking-wider text-sm flex items-center">
+                        <i class="fas fa-microscope text-blue-700 me-2"></i> Product Specification
+                    </h5>
+                    <div class="table-responsive">
+                        <table class="table table-borderless align-middle mb-0">
+                            <tbody class="text-stone-700">
+                                <tr class="border-b border-stone-100">
+                                    <td class="py-3 font-semibold w-1/3 text-xs md:text-sm">Type</td>
+                                    <td class="py-3 text-xs md:text-sm">White or Brown, Natural</td>
+                                </tr>
+                                <tr class="border-b border-stone-100">
+                                    <td class="py-3 font-semibold text-stone-500 text-xs md:text-sm">Purity</td>
+                                    <td class="py-3 text-xs md:text-sm">Min 99%</td>
+                                </tr>
+                                <tr class="border-b border-stone-100">
+                                    <td class="py-3 font-semibold text-stone-500 text-xs md:text-sm">Moisture Content</td>
+                                    <td class="py-3 text-xs md:text-sm">Max 7%</td>
+                                </tr>
+                                <tr class="border-b border-stone-100">
+                                    <td class="py-3 font-semibold text-stone-500 text-xs md:text-sm">Oil Content</td>
+                                    <td class="py-3 text-xs md:text-sm">Min 48%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 font-semibold text-stone-500 text-xs md:text-sm">Packaging</td>
+                                    <td class="py-3 text-xs md:text-sm">50kg or 25kg PP bags</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="text-center md:text-start mb-5 lg:mb-0">
+                    <a href="https://wa.me/2348062468281?text=Hello,%20I%20am%20interested%20in%20your%20Sesame%20Seeds.%20Can%20I%20get%20more%20information?" 
+                       target="_blank" 
+                       class="btn btn-whatsapp px-5 py-3 shadow-lg inline-flex items-center no-underline">
+                        <i class="fab fa-whatsapp text-2xl me-2"></i>
+                        MAKE AN ENQUIRY
+                    </a>
+                    <p class="mt-3 text-xs text-stone-400 font-medium uppercase tracking-widest">Global Export Grade Guaranteed</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 order-2">
+                <div class="sticky-sidebar">
+                    <div class="sidebar-menu shadow-xl mb-4">
+                        <div class="p-4 border-b border-white/10 flex justify-between items-center">
+                            <h5 class="text-white font-bold tracking-widest uppercase text-xs mb-0">Quick Menu</h5>
+                            <i class="fas fa-boxes-stacked text-amber-400"></i>
+                        </div>
+                        <a href="cashew.html" class="sidebar-link">Raw Cashew Nuts</a>
+                        <a href="cocoa.html" class="sidebar-link">Cocoa Beans</a>
+                        <a href="f-ginger.html" class="sidebar-link">Fresh Ginger</a>
+                        <a href="d-ginger.html" class="sidebar-link">Dried Split Ginger</a>
+                        <a href="charcoal.html" class="sidebar-link">Hardwood Charcoal</a>
+                        <a href="peanuts.html" class="sidebar-link">Blanched Peanuts</a>
+                        <a href="sorghum.html" class="sidebar-link">Sorghum Seeds</a>
+                        <a href="moringa.html" class="sidebar-link">Moringa Seeds</a>
+                        <a href="cassava.html" class="sidebar-link">Dried Cassava Chips</a>
+                        <a href="turmeric.html" class="sidebar-link">Turmeric</a>
+                        <a href="starch.html" class="sidebar-link">Tapioca Starch</a>
+                        <a href="shea.html" class="sidebar-link">Shea Butter</a>
+                        <a href="sesame.html" class="sidebar-link">Sesame Seeds</a>
+                        <a href="soybeans.html" class="sidebar-link">Soybeans</a>
+                        <a href="flower.html" class="sidebar-link border-0">Hibiscus Flowers</a>
+                    </div>
+
+                    <div class="call-action-box shadow-lg">
+                        <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-white/20">
+                            <i class="fas fa-phone-alt text-xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-1 uppercase tracking-tighter">Direct Line</h4>
+                        <p class="text-white/70 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Logistics & Supply Desk</p>
+                        <a href="tel:+2348062468281" class="text-2xl font-bold text-white no-underline hover:text-amber-400 transition-colors block">
+                            +234 806 246 8281
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="product-section py-5 overflow-hidden" style="background-color: #fcfcfc;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-0" style="color: rgb(52, 50, 50); font-family: 'Playfair Display', serif;">
+                Similar Products
+            </h2>
+        </div>
+
+        <div class="swiper continuousSwiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <div class="card product-card border-0 shadow-sm">
+                        <img src="assets/img/cocoa.jpg" alt="Cocoa Beans">
+                        <div class="card-body text-center p-3">
+                            <h6 class="fw-bold">Cocoa Beans</h6>
+                            <div class="stars small mb-2 text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <a href="#" class="btn btn-card w-100">Make Enquiry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card product-card border-0 shadow-sm">
+                        <img src="assets/img/sesame.jpg" alt="Sesame Seeds">
+                        <div class="card-body text-center p-3">
+                            <h6 class="fw-bold">Sesame Seeds</h6>
+                            <div class="stars small mb-2 text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <a href="#" class="btn btn-card w-100">Make Enquiry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card product-card border-0 shadow-sm">
+                        <img src="assets/img/peanuts.jpg" alt="Blanched Peanuts">
+                        <div class="card-body text-center p-3">
+                            <h6 class="fw-bold">Blanched Peanuts</h6>
+                            <div class="stars small mb-2 text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <a href="peanuts.html" class="btn btn-card w-100">Make Enquiry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card product-card border-0 shadow-sm">
+                        <img src="assets/img/fresh-g.jpg" alt="Fresh Ginger">
+                        <div class="card-body text-center p-3">
+                            <h6 class="fw-bold">Fresh Ginger</h6>
+                            <div class="stars small mb-2 text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <a href="f-ginger.html" class="btn btn-card w-100">Make Enquiry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card product-card border-0 shadow-sm">
+                        <img src="assets/img/dry-g.jpg" alt="Dried Split Ginger">
+                        <div class="card-body text-center p-3">
+                            <h6 class="fw-bold">Dried Split Ginger</h6>
+                            <div class="stars small mb-2 text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <a href="d-ginger.html" class="btn btn-card w-100">Make Enquiry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card product-card border-0 shadow-sm">
+                        <img src="assets/img/coal.jpg" alt="Hardwood Charcoal">
+                        <div class="card-body text-center p-3">
+                            <h6 class="fw-bold">Hardwood Charcoal</h6>
+                            <div class="stars small mb-2 text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <a href="charcoal.html" class="btn btn-card w-100">Make Enquiry</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+ <footer class="main-footer">
+  <div class="container">
+    <div class="row g-5">
+      
+      <div class="col-lg-4 col-md-6">
+        <img src="assets/img/logo.png" alt="Phil Legacy Logo" height="40" class="mb-4 footer-logo" />
+        <p class="pe-lg-5 footer-description">
+          Phil Legacy Nig Ltd is an esteemed worldwide trading company specializing in the import and export of exceptional agricultural commodities, bridging Nigeria's finest produce with global markets.
+        </p>
+      </div>
+
+      <div class="col-lg-2 col-md-6">
+        <h5 class="footer-title">NAVIGATION</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="products.html" class="footer-link">Our Products</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-title">CONTACT US</h5>
+        
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt contact-icon"></i>
+          <span>80, Airport Road, Benin City, Edo State, Nigeria.</span>
+        </div>
+
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt contact-icon"></i>
+          <div>
+            +234 806 246 8281<br>
+            +234 706 730 7828
+          </div>
+        </div>
+
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope contact-icon"></i>
+          <a href="mailto:sales@phillegacy.com" class="text-reset text-decoration-none">sales@phillegacy.com</a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-title">CONNECT WITH US</h5>
+        <p class="small mb-4 text-secondary">Follow us for updates on agricultural trends and new commodity arrivals.</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-circle"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-circle"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/2348062468281?text=Hello%20Phil%20Legacy,%20I%20would%20like%20to%20make%20an%20enquiry." class="social-circle"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+    
+    <div class="row align-items-center pb-4">
+      <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+        <p class="copyright-text mb-0">&copy; 2026 Phil Legacy Nig Ltd. All Rights Reserved.</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <a href="#" class="footer-link-bottom me-4">Privacy Policy</a>
+        <a href="#" class="footer-link-bottom">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/2348062468281?text=Hello%20Phil%20Legacy,%20I'm%20interested%20in%20your%20agricultural%20products." class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</footer>
+
+<style>
+/* Footer Main Container */
+.main-footer {
+    background-color: #0b0b0b; /* Slightly darker for more depth */
+    color: #9ca3af;
+    padding-top: 80px;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logo constraint */
+.footer-logo {
+    max-width: 60px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Titles with Blue Border (as per original image reference) */
+.footer-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 3px solid #1e40af; /* Kept blue per image navigation sidebar */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.footer-description {
+    color: #9ca3af;
+    line-height: 1.8;
+    font-size: 0.9rem;
+}
+
+/* Navigation Links */
+.footer-link {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.footer-link:hover {
+    color: #c5a046; /* Gold Hover */
+    padding-left: 8px;
+}
+
+/* Contact Items & Gold Icons */
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.contact-icon {
+    color: #c5a046; /* Changed to Gold */
+    margin-top: 4px;
+    font-size: 1.1rem;
+}
+
+/* Social Icon Circles */
+.social-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-circle:hover {
+    background-color: #c5a046; /* Gold Hover */
+    color: #ffffff;
+    transform: translateY(-5px);
+}
+
+/* Divider & Bottom Bar */
+.footer-divider {
+    border-top: 1px solid #1f2937;
+    margin: 50px 0 30px;
+}
+
+.copyright-text {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.footer-link-bottom {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s;
+}
+
+.footer-link-bottom:hover {
+    color: #c5a046;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    color: white;
+}
+
+@keyframes pulse-whatsapp {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+</style>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+    var swiper = new Swiper(".continuousSwiper", {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        loop: true,
+        speed: 6000, 
+        allowTouchMove: false,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            640: { slidesPerView: 3 },
+            768: { slidesPerView: 4 },
+            1024: { slidesPerView: 5 }, 
+        },
+    });
+    </script>
+
+</body>
+</html>

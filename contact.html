@@ -2,15 +2,30 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact Us - Phil Legacy | Global Agro-Export</title>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phil Legacy Nig Ltd</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <style>
     :root {
@@ -43,7 +58,7 @@
     .page-title {
       position: relative;
       padding: 100px 0;
-      background: linear-gradient(135deg, rgba(27, 67, 50, 0.95) 0%, rgba(45, 106, 79, 0.8) 100%), 
+      background: linear-gradient(135deg, rgba(41, 20, 64, 0.95) 0%, rgba(71, 93, 219, 0.8) 100%), 
                   url('https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?q=80&w=2000') no-repeat center center/cover;
       color: var(--white);
       text-align: center;
@@ -174,37 +189,89 @@
       </div>
     </section>
 
-    <section class="py-5 mt-5">
-      <div class="container">
-        <div class="row g-4 text-center">
-          
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="info-item">
-              <i class="bi bi-geo-alt"></i>
-              <h4>Visit Us</h4>
-              <p>80, Airport Road, Benin City,<br>Edo State, Nigeria.</p>
-            </div>
+   <section class="py-5 mt-5">
+  <div class="container">
+    <div class="row g-4 text-center">
+      
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="info-item">
+          <div class="info-icon-circle">
+            <i class="fas fa-map-marker-alt"></i>
           </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="info-item">
-              <i class="bi bi-telephone"></i>
-              <h4>Call Us</h4>
-              <p>+234 806 246 8281<br>+234 706 730 7828</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="info-item">
-              <i class="bi bi-envelope"></i>
-              <h4>Email Us</h4>
-              <p>sales@phillegacy.com<br>info@phillegacy.com</p>
-            </div>
-          </div>
-
+          <h4>Visit Us</h4>
+          <p>80, Airport Road, Benin City,<br>Edo State, Nigeria.</p>
         </div>
       </div>
-    </section>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="info-item">
+          <div class="info-icon-circle">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h4>Call Us</h4>
+          <p>+234 806 246 8281<br>+234 706 730 7828</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="info-item">
+          <div class="info-icon-circle">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h4>Email Us</h4>
+          <p>sales@phillegacy.com<br>info@phillegacy.com</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* Styling to make the icons look premium and match your footer */
+.info-item {
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-10px);
+}
+
+.info-icon-circle {
+    width: 60px;
+    height: 60px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #2b53b9; /* Your Brand Gold */
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.info-item:hover .info-icon-circle {
+    background: #2b53b9;
+    color: #fff;
+}
+
+.info-item h4 {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.info-item p {
+    color: #324fc1;
+    line-height: 1.6;
+}
+</style>
 
     <section class="py-5 mb-5">
       <div class="container">
@@ -248,13 +315,222 @@
 
   </main>
 
-  <footer class="py-5 border-top text-center bg-white">
-    <div class="container">
-      <img src="assets/img/logo.png" alt="Logo" height="40" class="mb-3">
-      <p class="text-muted small mb-0">© 2026 Phil Legacy Global Services. Building legacies through global trade.</p>
-      <p class="small fw-bold" style="color: var(--accent)">Phillegacy.com</p>
+   <footer class="main-footer">
+  <div class="container">
+    <div class="row g-5">
+      
+      <div class="col-lg-4 col-md-6">
+        <img src="assets/img/logo.png" alt="Phil Legacy Logo" height="40" class="mb-4 footer-logo" />
+        <p class="pe-lg-5 footer-description">
+          Phil Legacy Nig Ltd is an esteemed worldwide trading company specializing in the import and export of exceptional agricultural commodities, bridging Nigeria's finest produce with global markets.
+        </p>
+      </div>
+
+      <div class="col-lg-2 col-md-6">
+        <h5 class="footer-title">NAVIGATION</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="products.html" class="footer-link">Our Products</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-title">CONTACT US</h5>
+        
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt contact-icon"></i>
+          <span>80, Airport Road, Benin City, Edo State, Nigeria.</span>
+        </div>
+
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt contact-icon"></i>
+          <div>
+            +234 806 246 8281<br>
+            +234 706 730 7828
+          </div>
+        </div>
+
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope contact-icon"></i>
+          <a href="mailto:sales@phillegacy.com" class="text-reset text-decoration-none">sales@phillegacy.com</a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-title">CONNECT WITH US</h5>
+        <p class="small mb-4 text-secondary">Follow us for updates on agricultural trends and new commodity arrivals.</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-circle"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-circle"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/2348062468281?text=Hello%20Phil%20Legacy,%20I%20would%20like%20to%20make%20an%20enquiry." class="social-circle"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
     </div>
-  </footer>
+
+    <div class="footer-divider"></div>
+    
+    <div class="row align-items-center pb-4">
+      <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+        <p class="copyright-text mb-0">&copy; 2026 Phil Legacy Nig Ltd. All Rights Reserved.</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <a href="#" class="footer-link-bottom me-4">Privacy Policy</a>
+        <a href="#" class="footer-link-bottom">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/2348062468281?text=Hello%20Phil%20Legacy,%20I'm%20interested%20in%20your%20agricultural%20products." class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</footer>
+
+<style>
+/* Footer Main Container */
+.main-footer {
+    background-color: #0b0b0b; /* Slightly darker for more depth */
+    color: #9ca3af;
+    padding-top: 80px;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logo constraint */
+.footer-logo {
+    max-width: 60px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Titles with Blue Border (as per original image reference) */
+.footer-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 3px solid #1e40af; /* Kept blue per image navigation sidebar */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.footer-description {
+    color: #9ca3af;
+    line-height: 1.8;
+    font-size: 0.9rem;
+}
+
+/* Navigation Links */
+.footer-link {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.footer-link:hover {
+    color: #c5a046; /* Gold Hover */
+    padding-left: 8px;
+}
+
+/* Contact Items & Gold Icons */
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.contact-icon {
+    color: #c5a046; /* Changed to Gold */
+    margin-top: 4px;
+    font-size: 1.1rem;
+}
+
+/* Social Icon Circles */
+.social-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-circle:hover {
+    background-color: #c5a046; /* Gold Hover */
+    color: #ffffff;
+    transform: translateY(-5px);
+}
+
+/* Divider & Bottom Bar */
+.footer-divider {
+    border-top: 1px solid #1f2937;
+    margin: 50px 0 30px;
+}
+
+.copyright-text {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.footer-link-bottom {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s;
+}
+
+.footer-link-bottom:hover {
+    color: #c5a046;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    color: white;
+}
+
+@keyframes pulse-whatsapp {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+</style>
+    
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
