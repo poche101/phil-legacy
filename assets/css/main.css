@@ -74,7 +74,8 @@
 
 .nav-link:hover {
     color: white !important;
-    background: var(--phil-gold);
+    background: var(--phil-blue);
+    
 }
 
 /* Enquiry Button - Solid to stand out */
@@ -87,12 +88,7 @@
     font-weight: bold;
 }
 
-/* Custom Underline Animations */
-.underline-wrapper {
-    display: flex;
-    align-items: center;
-    margin-top: 12px;
-}
+
 
 .line-main {
     height: 4px;

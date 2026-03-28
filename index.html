@@ -43,15 +43,61 @@
     </div>
 
     <!-----------Nav Starts---------------------->
-        <style>
+   <style>
   :root {
-    --phil-gold: #C5A059;
-    --phil-orange: #FF8C00;
+    --phil-blue-primary: #0066cc; /* Brand Blue */
+    --phil-blue-deep: #0a192f;
     --stone-dark: #1c1917;
-    --glass-blue: rgba(10, 25, 47, 0.94); 
+    --glass-blue: rgba(10, 25, 47, 0.98); 
   }
 
-  /* 1. Hamburger Icon Visibility */
+  /* --- 1. Desktop Styles --- */
+  .navbar {
+    background: #ffffff !important;
+    transition: all 0.3s ease;
+    height: 90px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Large Logo Positioning */
+  .navbar-brand {
+    position: relative;
+    padding: 0;
+  }
+  .navbar-brand img {
+    height: 130px;
+    width: auto;
+    position: absolute;
+    top: -45px;
+    z-index: 2200;
+  }
+
+  .nav-link {
+    color: var(--stone-dark) !important;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    padding: 8px 20px !important;
+    border-radius: 50px; /* For the hover capsule effect */
+    transition: all 0.3s ease;
+  }
+
+  /* Desktop Hover: Background turns Blue, Text turns White */
+  @media (min-width: 992px) {
+    .navbar-nav {
+      margin-left: auto !important; /* Moves menu items to the right */
+      margin-right: 2rem;
+    }
+
+    .nav-link:hover {
+      background-color: var(--phil-blue-primary) !important;
+      color: #ffffff !important;
+      /* Underline removed as requested */
+    }
+  }
+
+  /* --- 2. Mobile Styles --- */
   .navbar-toggler {
     border: none !important;
     padding: 0;
@@ -59,110 +105,89 @@
   }
   
   .hamburger-icon {
-    width: 30px; height: 18px;
+    width: 28px; height: 18px;
     display: flex; flex-direction: column; justify-content: space-between;
   }
+
   .hamburger-line {
-    display: block; height: 2px; width: 100%;
-    background-color: #ffffff;
+    display: block; height: 3px; width: 100%;
     border-radius: 10px;
+    background-color: var(--phil-blue-primary) !important;
     transition: all 0.3s ease;
   }
 
-  /* 2. Full Screen Blue Glass Overlay */
   @media (max-width: 991.98px) {
+    .navbar { height: 80px; }
+    
+    .navbar-brand img {
+      height: 95px;
+      position: static;
+      margin-top: 0;
+    }
+
     .navbar-collapse {
       position: fixed;
-      top: 0;
-      right: -100%; 
-      width: 100%;
-      height: 100vh;
+      top: 0; right: -100%; 
+      width: 100%; height: 100vh;
       background: var(--glass-blue) !important;
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       display: flex !important; 
       flex-direction: column;
-      padding: 30px 40px; /* Adjusted padding */
-      transition: right 0.6s cubic-bezier(0.8, 0, 0.2, 1);
+      padding: 40px;
+      transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
       z-index: 2000;
-      overflow-y: auto;
     }
 
-    .navbar-collapse.show {
-      right: 0;
-    }
+    .navbar-collapse.show { right: 0; }
 
-    /* Mobile Header Styling */
     .mobile-menu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Header Line */
-      margin-bottom: 30px;
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 40px; padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Horizontal Line between Links and Footer */
-    .mobile-menu-divider {
-      height: 1px;
-      background: rgba(255, 255, 255, 0.1);
-      width: 100%;
-      margin: 30px 0;
-    }
-
-    .nav-item {
-      opacity: 0;
-      transform: translateX(30px);
-      transition: all 0.5s ease;
-    }
-    .navbar-collapse.show .nav-item {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .navbar-collapse.show .nav-item:nth-child(1) { transition-delay: 0.1s; }
-    .navbar-collapse.show .nav-item:nth-child(2) { transition-delay: 0.2s; }
-    .navbar-collapse.show .nav-item:nth-child(3) { transition-delay: 0.3s; }
-    .navbar-collapse.show .nav-item:nth-child(4) { transition-delay: 0.4s; }
-
-    .nav-link-mobile {
-      font-size: 1rem !important;
-      color: rgba(255,255,255,0.9) !important;
+    /* Mobile Links: Turn White on Hover */
+    .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 0.7) !important;
+      font-size: 1.2rem !important;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      padding: 15px 0;
-      display: block;
+      letter-spacing: 3px;
+      padding: 18px 0 !important;
+      border-radius: 0;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffffff !important;
+      background: transparent !important;
+    }
+
+    .btn-close-menu {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      width: 45px; height: 45px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
     }
   }
 
-  /* 3. Orange Icons */
   .mobile-footer i {
-    color: var(--phil-orange) !important;
-    font-size: 1.5rem;
-  }
-  
-  .btn-close-menu {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: var(--phil-blue-primary) !important;
+    font-size: 1.4rem;
   }
 </style>
 
-<nav class="navbar navbar-expand-lg sticky-top py-3 shadow-sm" style="background: var(--stone-dark);">
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
   <div class="container">
     <a class="navbar-brand" href="index.html">
-      <img src="assets/img/logo.png" alt="Phil Legacy" height="50" />
+      <img src="assets/img/logo.png" alt="Phil Legacy" />
     </a>
 
     <button class="navbar-toggler" type="button" onclick="toggleMobileMenu()">
       <div class="hamburger-icon">
         <span class="hamburger-line"></span>
-        <span class="hamburger-line" style="width: 70%; align-self: flex-end;"></span>
+        <span class="hamburger-line" style="width: 75%; align-self: flex-end;"></span>
         <span class="hamburger-line"></span>
       </div>
     </button>
@@ -170,49 +195,45 @@
     <div class="collapse navbar-collapse" id="mainNavbar">
       
       <div class="mobile-menu-header d-lg-none">
-        <img src="assets/img/logo.png" alt="Logo" height="40">
+        <img src="assets/img/logo.png" alt="Logo" height="60">
         <button class="btn-close-menu" onclick="toggleMobileMenu()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
+           <i class="fas fa-times"></i>
         </button>
       </div>
 
-      <ul class="navbar-nav mx-auto">
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link nav-link-desktop nav-link-mobile" href="index.html">Home</a>
+          <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-desktop nav-link-mobile" href="about.html">About</a>
+          <a class="nav-link" href="about.html">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-desktop nav-link-mobile" href="products.html">Products</a>
+          <a class="nav-link" href="products.html">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-desktop nav-link-mobile" href="contact.html">Contact</a>
+          <a class="nav-link" href="contact.html">Contact</a>
         </li>
         
         <li class="nav-item d-lg-none mt-4">
           <a href="request.html" class="btn w-100 py-3 rounded-pill fw-bold text-white shadow-sm" 
-             style="background: var(--phil-gold); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">
+             style="background: var(--phil-blue-primary); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;">
              Request Service
           </a>
         </li>
       </ul>
 
-      <div class="mobile-menu-divider d-lg-none"></div>
-
       <div class="d-none d-lg-block">
         <a href="request.html" class="btn px-4 py-2 rounded-pill fw-bold text-white shadow-sm" 
-           style="background: var(--phil-gold); font-size: 0.9rem;">
+           style="background: var(--phil-blue-primary); font-size: 0.9rem;">
            Request Service
         </a>
       </div>
 
       <div class="mobile-footer d-lg-none mt-auto">
-        <p class="small text-white-50 mb-4">sales@phillegacy.com</p>
-        <div class="d-flex gap-4">
+        <div class="border-top border-white opacity-10 mb-4"></div>
+        <p class="small text-white-50 mb-3">sales@phillegacy.com</p>
+        <div class="d-flex gap-4 mb-4">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -226,13 +247,8 @@
 <script>
   function toggleMobileMenu() {
     const menu = document.getElementById('mainNavbar');
-    menu.classList.toggle('show');
-    
-    if(menu.classList.contains('show')) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+    const isShowing = menu.classList.toggle('show');
+    document.body.style.overflow = isShowing ? 'hidden' : 'auto';
   }
 </script>
 
@@ -380,7 +396,7 @@
 
 <style>
   :root {
-    --phil-gold: #c5a046;
+    --phil-gold: #0066cc;
     --stone-dark: #1c1917;
   }
 
@@ -437,7 +453,7 @@
 
   /* Buttons & Indicators */
   .btn-gold {
-    background-color: var(--phil-gold);
+    background-color: #0066cc;
     color: #fff;
     font-weight: 700;
     letter-spacing: 0.15em;
@@ -449,16 +465,16 @@
     display: inline-block;
   }
   .btn-gold:hover {
-    background-color: #dcb35c;
+    background-color: #0066cc;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(197, 160, 70, 0.4);
+    box-shadow: 0 10px 20px rgba(46, 46, 154, 0.4);
     color: #fff;
   }
 
   #flippingHero .carousel-indicators [data-bs-target] {
     width: 10px; height: 10px; border-radius: 50%; margin: 0 8px;
   }
-  #flippingHero .carousel-indicators .active { background-color: var(--phil-gold); transform: scale(1.3); }
+  #flippingHero .carousel-indicators .active { background-color: #0066cc; transform: scale(1.3); }
 </style>
 
 <section id="flippingHero" class="carousel slide" data-bs-ride="carousel" style="height: 80vh; min-height: 600px;">
@@ -477,7 +493,7 @@
         <div class="container text-center">
           <div class="glass-card animate__animated animate__fadeInUp">
             <h1 class="display-3 fw-bold text-white text-uppercase mb-3" style="letter-spacing: -1px;">
-              Premium <span style="color: var(--phil-gold);">Cocoa Beans</span>
+              Premium Cocoa Beans
             </h1>
             <p class="lead text-white-50 mb-5">Sourced from the heart of West Africa's most fertile regions.</p>
             <a href="products.html" class="btn btn-gold">VIEW SPECIFICATIONS</a>
@@ -492,7 +508,7 @@
         <div class="container text-center">
           <div class="glass-card animate__animated animate__fadeInUp">
             <h1 class="display-3 fw-bold text-white text-uppercase mb-3">
-              Grade-A <span style="color: var(--phil-gold);">Cashew Nuts</span>
+              Grade-A Cashew Nuts
             </h1>
             <p class="lead text-white-50 mb-5">Optimized KOR values for elite global processing standards.</p>
             <a href="products.html" class="btn btn-gold">EXPLORE GRADES</a>
@@ -507,7 +523,7 @@
         <div class="container text-center">
           <div class="glass-card animate__animated animate__fadeInUp">
             <h1 class="display-3 fw-bold text-white text-uppercase mb-3">
-              Industrial <span style="color: var(--phil-gold);">Dried Ginger</span>
+              Industrial Dried Ginger
             </h1>
             <p class="lead text-white-50 mb-5">High-pungency split ginger for food and pharma excellence.</p>
             <a href="products.html" class="btn btn-gold">QUALITY ASSURANCE</a>
@@ -530,194 +546,253 @@
 
     <!------------About starts---------------------->
 
-    <section
-      class="about-section py-5 overflow-hidden"
-      id="about"
-      style="
-        background-color: #fdfdfd;
-        font-family: &quot;Inter&quot;, sans-serif;
-      "
-    >
-      <div class="container py-lg-5">
-        <div class="row align-items-center">
-          <div
-            class="col-lg-7 mb-5 mb-lg-0 animate__animated animate__fadeInLeft"
+    <style>
+  /* Blue Underline Styling */
+  .underline-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .line-main {
+    height: 4px;
+    width: 80px;
+    background-color: #0066cc; /* Brand Blue */
+    display: block;
+    border-radius: 2px;
+  }
+
+  .line-faded {
+    height: 2px;
+    width: 150px;
+    background-color: rgba(0, 102, 204, 0.2); /* Faded Blue */
+    display: block;
+    margin-top: 4px;
+    border-radius: 2px;
+  }
+
+  /* Custom Animations for the underline */
+  .custom-grow-animation {
+    animation: grow 1.5s ease-out forwards;
+    transform-origin: left;
+  }
+
+  @keyframes grow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  .custom-fade-in-animation {
+    animation: fadeIn 2s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Button Styling to match blue theme */
+  .btn-gold-outline {
+    border: 2px solid #0066cc;
+    color: #0066cc;
+    background: transparent;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+  }
+
+  .btn-gold-outline:hover {
+    background-color: #0066cc;
+    color: #fff;
+  }
+
+  .icon-circle {
+    background: rgba(0, 102, 204, 0.1);
+    color: #0066cc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .experience-box {
+    position: absolute;
+    bottom: 30px;
+    left: -20px;
+    background: #0066cc;
+    color: white;
+    padding: 20px;
+    border-radius: 4px;
+    z-index: 3;
+    box-shadow: 0 10px 30px rgba(0, 102, 204, 0.3);
+  }
+  
+  .box-divider {
+      height: 2px;
+      background: rgba(255,255,255,0.3);
+      margin: 10px 0;
+  }
+</style>
+
+<section
+  class="about-section py-5 overflow-hidden"
+  id="about"
+  style="background-color: #fdfdfd; font-family: 'Inter', sans-serif;"
+>
+  <div class="container py-lg-5">
+    <div class="row align-items-center">
+      <div class="col-lg-7 mb-5 mb-lg-0 animate__animated animate__fadeInLeft">
+        <div class="about-content pe-lg-4">
+          <h6
+            class="text-uppercase fw-bold mb-3"
+            style="color: #0066cc; letter-spacing: 3px; font-size: 0.9rem"
           >
-            <div class="about-content pe-lg-4">
-              <h6
-                class="text-uppercase fw-bold mb-3"
-                style="color: #c5a046; letter-spacing: 3px; font-size: 0.9rem"
-              >
-                Established 2019
-              </h6>
+            Established 2019
+          </h6>
 
-              <div class="heading-container mb-5">
-                <h2
-                  class="display-4 fw-bold mb-0 text-dark"
-                  style="font-family: &quot;Playfair Display&quot;, serif"
-                >
-                  About <span style="color: #c5a046">Phil Legacy</span>
-                </h2>
-                <div class="underline-wrapper">
-                  <span class="line-main custom-grow-animation"></span>
-                  <span class="line-faded custom-fade-in-animation"></span>
-                </div>
-              </div>
-
-              <p
-                class="lead fw-normal mb-4 animate__animated animate__fadeInUp animate__delay-1s"
-                style="
-                  font-size: 1.25rem;
-                  color: #333;
-                  line-height: 1.6;
-                  font-weight: 500;
-                "
-              >
-                Phil Legacy Nig. Ltd is a distinguished Nigerian trading and
-                export company, specializing in premium agricultural products.
-              </p>
-
-              <div
-                class="about-text-container animate__animated animate__fadeInUp animate__delay-1s"
-              >
-                <p
-                  class="mb-4 text-secondary"
-                  style="
-                    font-size: 1.05rem;
-                    line-height: 1.9;
-                    text-align: justify;
-                  "
-                >
-                  Founded in 2019, we have rapidly positioned ourselves as a
-                  trusted global supplier, delivering high-quality agro
-                  commodities from Nigeria to markets around the world. With a
-                  focus on excellence, sustainability, and reliability, we cater
-                  to the growing demand for premium agro products while
-                  maintaining strong relationships with farmers, processors, and
-                  global buyers.
-                </p>
-
-                <p
-                  class="mb-5 text-secondary"
-                  style="
-                    font-size: 1.05rem;
-                    line-height: 1.9;
-                    text-align: justify;
-                  "
-                >
-                  Our commitment to quality and ethical sourcing ensures that
-                  every product we deliver meets international standards. We
-                  pride ourselves on being a key player in promoting Nigeria's
-                  agricultural potential on the global stage while supporting
-                  the livelihoods of local farmers through sustainable and fair
-                  trade practices.
-                </p>
-              </div>
-
-              <div
-                class="row g-4 mb-5 animate__animated animate__fadeInUp animate__delay-2s"
-              >
-                <div class="col-md-6">
-                  <div class="d-flex align-items-start service-card">
-                    <div class="icon-circle me-3">
-                      <i class="fas fa-globe-africa fa-lg"></i>
-                    </div>
-                    <div>
-                      <h5
-                        class="fw-bold mb-1"
-                        style="font-family: &quot;Playfair Display&quot;, serif"
-                      >
-                        Global Export
-                      </h5>
-                      <p class="small text-muted mb-0">
-                        Reaching international markets with Nigerian excellence.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="d-flex align-items-start service-card">
-                    <div class="icon-circle me-3">
-                      <i class="fas fa-handshake fa-lg"></i>
-                    </div>
-                    <div>
-                      <h5
-                        class="fw-bold mb-1"
-                        style="font-family: &quot;Playfair Display&quot;, serif"
-                      >
-                        Fair Trade
-                      </h5>
-                      <p class="small text-muted mb-0">
-                        Empowering local farmers through ethical practices.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <a
-                href="#"
-                class="btn btn-gold-outline px-5 py-3 fw-bold animate__animated animate__fadeInUp animate__delay-2s"
-                >LEARN MORE ABOUT US</a
-              >
+          <div class="heading-container mb-5">
+            <h2
+              class="display-4 fw-bold mb-0 text-dark"
+              style="font-family: 'Playfair Display', serif"
+            >
+              About <span style="color: #0066cc">Phil Legacy</span>
+            </h2>
+            <div class="underline-wrapper">
+              <span class="line-main custom-grow-animation"></span>
+              <span class="line-faded custom-fade-in-animation"></span>
             </div>
           </div>
 
-          <div
-            class="col-lg-5 animate__animated animate__fadeInRight animate__delay-1s"
+          <p
+            class="lead fw-normal mb-4 animate__animated animate__fadeInUp animate__delay-1s"
+            style="font-size: 1.25rem; color: #333; line-height: 1.6; font-weight: 500;"
           >
-            <div class="image-stack-wrapper position-relative">
-              <div class="image-stack-wrapper position-relative p-4">
-                <div class="border-top-left"></div>
-                <div class="border-bottom-right"></div>
+            Phil Legacy Nig. Ltd is a distinguished Nigerian trading and
+            export company, specializing in premium agricultural products.
+          </p>
 
-                <div class="main-image-wrapper position-relative">
-                  <img
-                    src="assets/img/agro.jpg"
-                    alt="Premium Agro Products"
-                    class="img-fluid shadow-lg hover-zoom-effect"
-                    style="
-                      border-radius: 4px;
-                      height: 650px;
-                      width: 100%;
-                      object-fit: cover;
-                      z-index: 2;
-                      position: relative;
-                    "
-                  />
+          <div class="about-text-container animate__animated animate__fadeInUp animate__delay-1s">
+            <p
+              class="mb-4 text-secondary"
+              style="font-size: 1.05rem; line-height: 1.9; text-align: justify;"
+            >
+              Founded in 2019, we have rapidly positioned ourselves as a
+              trusted global supplier, delivering high-quality agro
+              commodities from Nigeria to markets around the world. With a
+              focus on excellence, sustainability, and reliability, we cater
+              to the growing demand for premium agro products while
+              maintaining strong relationships with farmers, processors, and
+              global buyers.
+            </p>
 
-                  <div
-                    class="experience-box animate__animated animate__zoomIn animate__delay-2s"
-                  >
-                    <div class="box-inner">
-                      <span class="number">2019</span>
-                      <div class="box-divider"></div>
-                      <span class="label">ESTABLISHED</span>
-                    </div>
-                  </div>
+            <p
+              class="mb-5 text-secondary"
+              style="font-size: 1.05rem; line-height: 1.9; text-align: justify;"
+            >
+              Our commitment to quality and ethical sourcing ensures that
+              every product we deliver meets international standards. We
+              pride ourselves on being a key player in promoting Nigeria's
+              agricultural potential on the global stage while supporting
+              the livelihoods of local farmers through sustainable and fair
+              trade practices.
+            </p>
+          </div>
+
+          <div class="row g-4 mb-5 animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="col-md-6">
+              <div class="d-flex align-items-start service-card">
+                <div class="icon-circle me-3">
+                  <i class="fas fa-globe-africa fa-lg"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold mb-1" style="font-family: 'Playfair Display', serif">
+                    Global Export
+                  </h5>
+                  <p class="small text-muted mb-0">
+                    Reaching international markets with Nigerian excellence.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex align-items-start service-card">
+                <div class="icon-circle me-3">
+                  <i class="fas fa-handshake fa-lg"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold mb-1" style="font-family: 'Playfair Display', serif">
+                    Fair Trade
+                  </h5>
+                  <p class="small text-muted mb-0">
+                    Empowering local farmers through ethical practices.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+
+          <a href="about.html" class="btn btn-gold-outline px-5 py-3 fw-bold animate__animated animate__fadeInUp animate__delay-2s">
+            LEARN MORE ABOUT US
+          </a>
         </div>
       </div>
-    </section>
+
+      <div class="col-lg-5 animate__animated animate__fadeInRight animate__delay-1s">
+        <div class="image-stack-wrapper position-relative p-4">
+          <div class="border-top-left" style="position: absolute; top: 0; left: 0; width: 100px; height: 100px; border-top: 5px solid #0066cc; border-left: 5px solid #0066cc;"></div>
+          <div class="border-bottom-right" style="position: absolute; bottom: 0; right: 0; width: 100px; height: 100px; border-bottom: 5px solid #0066cc; border-right: 5px solid #0066cc;"></div>
+
+          <div class="main-image-wrapper position-relative">
+            <img
+              src="assets/img/agro.jpg"
+              alt="Premium Agro Products"
+              class="img-fluid shadow-lg hover-zoom-effect"
+              style="border-radius: 4px; height: 650px; width: 100%; object-fit: cover; z-index: 2; position: relative;"
+            />
+
+           <div
+            class="experience-box animate__animated animate__zoomIn animate__delay-2s"
+            style="
+              border-left: 4px solid rgba(255, 255, 255, 0.9); /* White left border */
+              padding-left: 25px; /* Adjust padding for the border */
+            "
+          >
+            <div class="box-inner text-center">
+              <span
+                class="number fw-bold h3"
+                style="color: #ffffff;" /* White text for 2019 */
+                >2019</span
+              >
+              <div class="box-divider" style="background-color: rgba(255, 255, 255, 0.3);"></div>
+              <span
+                class="label small fw-bold"
+                style="
+                  letter-spacing: 2px;
+                  color: rgba(255, 255, 255, 0.85); /* Slightly muted white for the label */
+                "
+                >ESTABLISHED</span
+              >
+            </div>
+          </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
     <!-------------About Ends----------------------->
 
 
     <!--------------Products Section starts------------------------------->
 
-   <section class="product-section py-5 overflow-hidden" style="background-color: #fcfcfc;">
-    <div class="container">
-        <div class="text-center mb-5">
-    <h2 class="display-5 fw-bold mb-0 text-dark" style="color: #c5a046; font-family: 'Playfair Display', serif;">
-        Products We Export
-    </h2>
-    <div class="underline-wrapper justify-content-center">
-        <span class="line-main custom-grow-animation"></span>
-        <span class="line-faded custom-fade-in-animation"></span>
+      <section class="product-section py-5 overflow-hidden" style="background-color: #fcfcfc;">
+        <div class="container">
+            <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold mb-0 text-dark" style="color: #c5a046; font-family: 'Playfair Display', serif;">
+            Products We Export
+        </h2>
     </div>
-</div>
 
         <div class="swiper continuousSwiper">
             <div class="swiper-wrapper">
@@ -730,7 +805,7 @@
                             <div class="stars small mb-2 text-warning">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
-                            <button class="btn btn-card w-100">Make Enquiry</button>
+                            <button class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</button>
                         </div>
                     </div>
                 </div>
@@ -741,24 +816,24 @@
                         <div class="card-body text-center p-3">
                             <h6 class="fw-bold">Sesame Seeds</h6>
                             <div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <button class="btn btn-card w-100">Make Enquiry</button>
+                            <button class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</button>
                         </div>
                     </div>
                 </div>
 
-                 <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/cashew.jpg" class="card-img-top" alt="Raw Cashew Nuts"><div class="card-body text-center p-3"><h6 class="fw-bold">Raw Cashew Nuts</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="cashew.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
-                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/fresh-g.jpg" class="card-img-top" alt="Fresh Ginger"><div class="card-body text-center p-3"><h6 class="fw-bold">Fresh Ginger</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="f-ginger.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
-                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/dry-g.jpg" class="card-img-top" alt="Dried Split Ginger"><div class="card-body text-center p-3"><h6 class="fw-bold">Dried Split Ginger</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="d-ginger.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
-                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/coal.jpg" class="card-img-top" alt="Hardwood Charcoal"><div class="card-body text-center p-3"><h6 class="fw-bold">Hardwood Charcoal</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="charcoal.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
-                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/peanuts.jpg" class="card-img-top" alt="Blanched Peanuts"><div class="card-body text-center p-3"><h6 class="fw-bold">Blanched Peanuts</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="peanuts.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
-                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/Sorghum.jpg" class="card-img-top" alt="Sorghum Seeds"><div class="card-body text-center p-3"><h6 class="fw-bold">Sorghum Seeds</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="sorghum.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
-                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/moringa.jpg" class="card-img-top" alt="Moringa Seeds"><div class="card-body text-center p-3"><h6 class="fw-bold">Moringa Seeds</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="moringa.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
-                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/cassava.jpg" class="card-img-top" alt="Dried Cassava Chips"><div class="card-body text-center p-3"><h6 class="fw-bold">Dried Cassava Chips</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="cassava.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
-                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/turmeric.jpg" class="card-img-top" alt="Turmeric"><div class="card-body text-center p-3"><h6 class="fw-bold">Turmeric</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="turmeric.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
-                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/tapioca.jpg" class="card-img-top" alt="Tapioca Starch"><div class="card-body text-center p-3"><h6 class="fw-bold">Tapioca Starch</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="starch.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
-                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/shea.jpg" class="card-img-top" alt="Shea Butter"><div class="card-body text-center p-3"><h6 class="fw-bold">Shea Butter</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="shea.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
-                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/soybeans.jpg" class="card-img-top" alt="Soybeans"><div class="card-body text-center p-3"><h6 class="fw-bold">Soybeans</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="soybeans.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
-                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/hibiscus.jpg" class="card-img-top" alt="Hibiscus Flowers"><div class="card-body text-center p-3"><h6 class="fw-bold">Hibiscus Flowers</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="flower.html" class="btn btn-card w-100">Make Enquiry</a></div></div></div>
+                 <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/cashew.jpg" class="card-img-top" alt="Raw Cashew Nuts"><div class="card-body text-center p-3"><h6 class="fw-bold">Raw Cashew Nuts</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="cashew.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
+                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/fresh-g.jpg" class="card-img-top" alt="Fresh Ginger"><div class="card-body text-center p-3"><h6 class="fw-bold">Fresh Ginger</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="f-ginger.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
+                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/dry-g.jpg" class="card-img-top" alt="Dried Split Ginger"><div class="card-body text-center p-3"><h6 class="fw-bold">Dried Split Ginger</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="d-ginger.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
+                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/coal.jpg" class="card-img-top" alt="Hardwood Charcoal"><div class="card-body text-center p-3"><h6 class="fw-bold">Hardwood Charcoal</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="charcoal.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
+                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/peanuts.jpg" class="card-img-top" alt="Blanched Peanuts"><div class="card-body text-center p-3"><h6 class="fw-bold">Blanched Peanuts</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="peanuts.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
+                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/Sorghum.jpg" class="card-img-top" alt="Sorghum Seeds"><div class="card-body text-center p-3"><h6 class="fw-bold">Sorghum Seeds</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="sorghum.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
+                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/moringa.jpg" class="card-img-top" alt="Moringa Seeds"><div class="card-body text-center p-3"><h6 class="fw-bold">Moringa Seeds</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="moringa.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
+                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/cassava.jpg" class="card-img-top" alt="Dried Cassava Chips"><div class="card-body text-center p-3"><h6 class="fw-bold">Dried Cassava Chips</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="cassava.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
+                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/turmeric.jpg" class="card-img-top" alt="Turmeric"><div class="card-body text-center p-3"><h6 class="fw-bold">Turmeric</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="turmeric.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
+                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/tapioca.jpg" class="card-img-top" alt="Tapioca Starch"><div class="card-body text-center p-3"><h6 class="fw-bold">Tapioca Starch</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="starch.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
+                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/shea.jpg" class="card-img-top" alt="Shea Butter"><div class="card-body text-center p-3"><h6 class="fw-bold">Shea Butter</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="shea.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
+                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/soybeans.jpg" class="card-img-top" alt="Soybeans"><div class="card-body text-center p-3"><h6 class="fw-bold">Soybeans</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="soybeans.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
+                <div class="swiper-slide"><div class="card product-card border-0 shadow-sm"><img src="assets/img/hibiscus.jpg" class="card-img-top" alt="Hibiscus Flowers"><div class="card-body text-center p-3"><h6 class="fw-bold">Hibiscus Flowers</h6><div class="stars small mb-2 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><a href="flower.html" class="btn btn-card w-100" style="background-color: #0066cc; color: white;">Make Enquiry</a></div></div></div>
 
             </div>
         </div>
@@ -771,7 +846,7 @@
 
    <style>
   :root {
-    --phil-gold: #C5A059;
+    --phil-gold: #0066cc;
     --stone-dark: #1c1917;
     --stone-muted: #57534e;
     --stone-light: #f5f5f4;
@@ -817,7 +892,7 @@
   .gold-underline {
     height: 4px;
     width: 80px;
-    background-color: var(--phil-gold);
+    background-color: #0066cc;
     margin: 1.5rem auto 0;
     border-radius: 2px;
   }
@@ -828,7 +903,7 @@
     
     <div class="text-center mb-5 pb-3">
       <h2 class="display-6 font-serif-italic text-dark">
-        Why Choose <span class="fst-normal fw-black" style="color: var(--phil-gold); font-family: sans-serif;">Phil Legacy Nig. Ltd?</span>
+        Why Choose <span class="fst-normal fw-black" style="color: #0066cc; font-family: sans-serif;">Phil Legacy Nig. Ltd?</span>
       </h2>
       <div class="gold-underline"></div>
     </div>
@@ -910,98 +985,20 @@
 </section>
     <!--------------Choose Us End--------------------------->
 
-   <style>
-  :root {
-    --phil-gold: #C5A059;
-    --footer-bg: #1c1917; /* Stone 900 */
-    --footer-text: #a8a29e; /* Stone 400 */
-  }
-
-  .main-footer {
-    background-color: var(--footer-bg);
-    color: var(--footer-text);
-    padding-top: 5rem;
-    padding-bottom: 2rem;
-    border-top: 1px solid rgba(197, 160, 89, 0.1);
-  }
-
-  .footer-title {
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    position: relative;
-    letter-spacing: 0.05em;
-  }
-
-  .footer-link {
-    color: var(--footer-text);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
-    margin-bottom: 0.75rem;
-  }
-
-  .footer-link:hover {
-    color: var(--phil-gold);
-    transform: translateX(5px);
-  }
-
-  .footer-contact-item {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-  }
-
-  .footer-icon {
-    color: var(--phil-gold);
-    flex-shrink: 0;
-  }
-
-  .social-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-
-  .social-icon:hover {
-    background: var(--phil-gold);
-    color: #000;
-    transform: translateY(-3px);
-  }
-
-  .footer-divider {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin: 3rem 0 1.5rem;
-  }
-
-  .copyright-text {
-    font-size: 0.85rem;
-    letter-spacing: 0.025em;
-  }
-</style>
-
+  
 <!----------------Services starts--------------------->
 
-<section class="services-section py-5" style="background: #0f172a; position: relative; overflow: hidden;">
+<section class="services-section py-5" style="background: rgb(211, 210, 210)smoke; position: relative; overflow: hidden;">
     <div style="position: absolute; top: -10%; right: -5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(197, 160, 70, 0.08) 0%, transparent 70%);"></div>
 
     <div class="container py-5">
         <div class="row mb-5">
             <div class="col-lg-6">
-                <h6 class="text-uppercase fw-bold mb-3" style="color: #c5a046; letter-spacing: 4px; font-size: 0.85rem;">
+                <h6 class="text-uppercase fw-bold mb-3" style="color: #0066cc; letter-spacing: 4px; font-size: 0.85rem;">
                     OUR SERVICES
                 </h6>
-                <h2 class="display-5 fw-bold text-white mb-4" style="font-family: 'Playfair Display', serif;">
-                    Expertise That Powers <br><span style="color: #c5a046;">Global Commerce</span>
+                <h2 class="display-5 fw-bold text-dark mb-4" style="font-family: 'Playfair Display', serif;">
+                    Expertise That Powers <br><span style="color: #0066cc;">Global Commerce</span>
                 </h2>
             </div>
             <div class="col-lg-5 offset-lg-1 d-flex align-items-center">
@@ -1013,48 +1010,48 @@
 
         <div class="row g-4">
             <div class="col-md-6 col-lg-3">
-                <div class="service-glass-card">
-                    <div class="service-icon-box">
-                        <i class="fas fa-ship"></i>
-                    </div>
-                    <h5 class="text-white fw-bold mb-3">International Trade</h5>
-                    <p class="text-white-50 small mb-0">
-                        Strategic cross-border trade facilitation ensuring compliance with Incoterms and global maritime regulations.
-                    </p>
-                </div>
+            <div class="service-glass-card" style="box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 25px;">
+          <div class="service-icon-box" style=" margin-bottom: 15px; font-size: 1.5rem;">
+              <i class="fas fa-ship"></i>
+          </div>
+          <h5 class="text-dark fw-bold mb-3">International Trade</h5>
+          <p class="text-dark-50 small mb-0">
+              Strategic cross-border trade facilitation ensuring compliance with Incoterms and global maritime regulations.
+          </p>
+      </div>
             </div>
 
             <div class="col-md-6 col-lg-3">
-                <div class="service-glass-card">
-                    <div class="service-icon-box">
+                <div class="service-glass-card"  style="box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 25px;">
+                    <div class="service-icon-box"  style=" margin-bottom: 15px; font-size: 1.5rem;">
                         <i class="fas fa-leaf"></i>
                     </div>
-                    <h5 class="text-white fw-bold mb-3">Commodity Export</h5>
-                    <p class="text-white-50 small mb-0">
+                    <h5 class="text-dark fw-bold mb-3">Commodity Export</h5>
+                    <p class="text-dark-50 small mb-0">
                         Direct sourcing and bulk exportation of Grade-A agro-commodities with strict quality-controlled processing.
                     </p>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-3">
-                <div class="service-glass-card">
-                    <div class="service-icon-box">
+                <div class="service-glass-card"  style="box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 25px;">
+                    <div class="service-icon-box"  style=" margin-bottom: 15px; font-size: 1.5rem;">
                         <i class="fas fa-file-invoice-dollar"></i>
                     </div>
-                    <h5 class="text-white fw-bold mb-3">Trade Finance</h5>
-                    <p class="text-white-50 small mb-0">
+                    <h5 class="text-dark fw-bold mb-3">Trade Finance</h5>
+                    <p class="text-dark-50 small mb-0">
                         Expert support in LC (Letters of Credit) management, CAD (Cash Against Docs), and risk mitigation.
                     </p>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-3">
-                <div class="service-glass-card">
-                    <div class="service-icon-box">
+                <div class="service-glass-card"  style="box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 12px; padding: 25px;">
+                    <div class="service-icon-box"  style=" margin-bottom: 15px; font-size: 1.5rem;">
                         <i class="fas fa-briefcase"></i>
                     </div>
-                    <h5 class="text-white fw-bold mb-3">Business Services</h5>
-                    <p class="text-white-50 small mb-0">
+                    <h5 class="text-dark fw-bold mb-3">Business Services</h5>
+                    <p class="text-dark-50 small mb-0">
                         End-to-end supply chain consulting and local representation for international investors in Nigeria.
                     </p>
                 </div>
@@ -1079,14 +1076,14 @@
     .service-glass-card:hover {
         background: rgba(255, 255, 255, 0.07);
         transform: translateY(-10px);
-        border-color: rgba(197, 160, 70, 0.5);
+        border-color: #0066cc;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
     .service-icon-box {
         width: 60px;
         height: 60px;
-        background: linear-gradient(135deg, #c5a046 0%, #e5c17d 100%);
+        background: #0066cc;
         border-radius: 15px;
         display: flex;
         align-items: center;
@@ -1117,19 +1114,24 @@
 <br>
 <br>
 <br>
+
 <footer class="main-footer">
   <div class="container">
     <div class="row g-5">
       
-      <div class="col-lg-4 col-md-6">
-        <img src="assets/img/logo.png" alt="Phil Legacy Logo" height="50" class="mb-4" />
-        <p class="pe-lg-5 lh-lg">
-          Phil Legacy Nig Ltd is an esteemed worldwide trading company specializing in the import and export of exceptional agricultural commodities, bridging Nigeria's finest produce with global markets.
-        </p>
-      </div>
+      <div class="col-lg-4 col-md-6" style="margin-top: -30px;"> <img 
+    src="assets/img/logo.png" 
+    alt="Phil Legacy Logo" 
+    style="height: 150px; width: auto; margin-bottom: 15px;" 
+  />
+  
+  <p class="pe-lg-5 lh-lg" style="color: rgb(242, 227, 227); font-size: 0.95rem; opacity: 0.9;">
+    Phil Legacy Nig Ltd is an esteemed worldwide trading company specializing in the import and export of exceptional agricultural commodities, bridging Nigeria's finest produce with global markets.
+  </p>
+</div>
 
       <div class="col-lg-2 col-md-6">
-        <h5 class="footer-title text-uppercase">Navigation</h5>
+        <h5 class="footer-title">NAVIGATION</h5>
         <ul class="list-unstyled">
           <li><a href="index.html" class="footer-link">Home</a></li>
           <li><a href="about.html" class="footer-link">About Us</a></li>
@@ -1139,15 +1141,15 @@
       </div>
 
       <div class="col-lg-3 col-md-6">
-        <h5 class="footer-title text-uppercase">Contact Us</h5>
+        <h5 class="footer-title">CONTACT US</h5>
         
         <div class="footer-contact-item">
-          <svg class="footer-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <i class="fas fa-map-marker-alt contact-icon"></i>
           <span>80, Airport Road, Benin City, Edo State, Nigeria.</span>
         </div>
 
         <div class="footer-contact-item">
-          <svg class="footer-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <i class="fas fa-phone-alt contact-icon"></i>
           <div>
             +234 806 246 8281<br>
             +234 706 730 7828
@@ -1155,38 +1157,147 @@
         </div>
 
         <div class="footer-contact-item">
-          <svg class="footer-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          <a href="mailto:sales@phillegacy.com" class="text-decoration-none text-reset">sales@phillegacy.com</a>
+          <i class="fas fa-envelope contact-icon"></i>
+          <a href="mailto:sales@phillegacy.com" class="text-reset text-decoration-none">sales@phillegacy.com</a>
         </div>
       </div>
 
       <div class="col-lg-3 col-md-6">
-        <h5 class="footer-title text-uppercase">Connect With Us</h5>
-        <p class="small mb-4">Follow us for updates on agricultural trends and new commodity arrivals.</p>
-        <div class="d-flex gap-3">
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://wa.me/2348062468281" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <h5 class="footer-title">CONNECT WITH US</h5>
+        <p class="small mb-4 text-secondary">Follow us for updates on agricultural trends and new commodity arrivals.</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-circle"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-circle"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/2348062468281?text=Hello%20Phil%20Legacy,%20I%20would%20like%20to%20make%20an%20enquiry." class="social-circle"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
 
     </div>
 
     <div class="footer-divider"></div>
-    <div class="row align-items-center">
+    
+    <div class="row align-items-center pb-4">
       <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
         <p class="copyright-text mb-0">&copy; 2026 Phil Legacy Nig Ltd. All Rights Reserved.</p>
       </div>
       <div class="col-md-6 text-center text-md-end">
-        <ul class="list-inline mb-0 small">
-          <li class="list-inline-item me-4"><a href="#" class="footer-link mb-0">Privacy Policy</a></li>
-          <li class="list-inline-item"><a href="#" class="footer-link mb-0">Terms of Service</a></li>
-        </ul>
+        <a href="#" class="footer-link-bottom me-4">Privacy Policy</a>
+        <a href="#" class="footer-link-bottom">Terms of Service</a>
       </div>
     </div>
   </div>
 </footer>
+
+<style>
+/* Footer Main Container */
+.main-footer {
+    background-color: #0b0b0b; /* Slightly darker for more depth */
+    color: #9ca3af;
+    padding-top: 80px;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logo constraint */
+.footer-logo {
+    max-width: 60px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Titles with Blue Border (as per original image reference) */
+.footer-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 3px solid #1e40af; /* Kept blue per image navigation sidebar */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.footer-description {
+    color: #9ca3af;
+    line-height: 1.8;
+    font-size: 0.9rem;
+}
+
+/* Navigation Links */
+.footer-link {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.footer-link:hover {
+    color: #c5a046; /* Gold Hover */
+    padding-left: 8px;
+}
+
+/* Contact Items & Gold Icons */
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.contact-icon {
+    color: #c5a046; /* Changed to Gold */
+    margin-top: 4px;
+    font-size: 1.1rem;
+}
+
+/* Social Icon Circles */
+.social-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-circle:hover {
+    background-color: #c5a046; /* Gold Hover */
+    color: #ffffff;
+    transform: translateY(-5px);
+}
+
+/* Divider & Bottom Bar */
+.footer-divider {
+    border-top: 1px solid #1f2937;
+    margin: 50px 0 30px;
+}
+
+.copyright-text {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.footer-link-bottom {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s;
+}
+
+.footer-link-bottom:hover {
+    color: #c5a046;
+}
+</style>
     <!------------Whatsapp Icon start----------------->
                      <script>
   function handleWaToggle() {

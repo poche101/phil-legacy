@@ -80,11 +80,11 @@
     }
 
     .breadcrumbs a { color: var(--white); text-decoration: none; opacity: 0.8; }
-    .breadcrumbs a:hover { color: var(--accent); opacity: 1; }
+    .breadcrumbs a:hover { color: white; opacity: 1; }
 
     /* --- Contact Info Cards --- */
     .info-item {
-      background: var(--white);
+      background: #0066cc;
       padding: 40px;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -95,14 +95,14 @@
 
     .info-item:hover {
       transform: translateY(-10px);
-      border-bottom-color: var(--accent);
+      border-bottom-color: #0066cc;
       box-shadow: 0 15px 40px rgba(45, 106, 79, 0.1);
     }
 
     /* icons changed to amber gold */
     .info-item i {
       font-size: 2.5rem;
-      color: var(--accent);
+      color: #0066cc;
       margin-bottom: 20px;
       display: inline-block;
       width: 60px;
@@ -117,7 +117,7 @@
 
     /* Icon hover state changed to primary green with white icon */
     .info-item:hover i {
-        background: var(--accent);
+        background: #0066cc;
         color: var(--white);
     }
 
@@ -144,8 +144,8 @@
 
     /* Submit button changed to amber gold */
     .btn-submit {
-      background: var(--accent);
-      color: var(--secondary);
+      background: #0066cc;
+      color: white;
       padding: 15px 40px;
       border-radius: 8px;
       font-weight: 700;
@@ -319,12 +319,16 @@
   <div class="container">
     <div class="row g-5">
       
-      <div class="col-lg-4 col-md-6">
-        <img src="assets/img/logo.png" alt="Phil Legacy Logo" height="40" class="mb-4 footer-logo" />
-        <p class="pe-lg-5 footer-description">
-          Phil Legacy Nig Ltd is an esteemed worldwide trading company specializing in the import and export of exceptional agricultural commodities, bridging Nigeria's finest produce with global markets.
-        </p>
-      </div>
+      <div class="col-lg-4 col-md-6" style="margin-top: -30px;"> <img 
+    src="assets/img/logo.png" 
+    alt="Phil Legacy Logo" 
+    style="height: 150px; width: auto; margin-bottom: 15px;" 
+  />
+  
+  <p class="pe-lg-5 lh-lg" style="color: rgb(242, 227, 227); font-size: 0.95rem; opacity: 0.9;">
+    Phil Legacy Nig Ltd is an esteemed worldwide trading company specializing in the import and export of exceptional agricultural commodities, bridging Nigeria's finest produce with global markets.
+  </p>
+</div>
 
       <div class="col-lg-2 col-md-6">
         <h5 class="footer-title">NAVIGATION</h5>
@@ -383,10 +387,6 @@
       </div>
     </div>
   </div>
-
-  <a href="https://wa.me/2348062468281?text=Hello%20Phil%20Legacy,%20I'm%20interested%20in%20your%20agricultural%20products." class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
 </footer>
 
 <style>
@@ -497,40 +497,7 @@
 .footer-link-bottom:hover {
     color: #c5a046;
 }
-
-/* WhatsApp Floating Button */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: #25d366;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    z-index: 9999;
-    transition: all 0.3s ease;
-    animation: pulse-whatsapp 2s infinite;
-}
-
-.whatsapp-float:hover {
-    background-color: #128c7e;
-    transform: scale(1.1);
-    color: white;
-}
-
-@keyframes pulse-whatsapp {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
 </style>
-    
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
